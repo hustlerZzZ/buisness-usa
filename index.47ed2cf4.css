@@ -1672,6 +1672,13 @@ body {
     text-align: center
 }
 
+.success-content h1 {
+    text-align: center;
+    font-size: 4rem;
+    padding-top: 1.5rem;
+    font-weight: 700;
+}
+
 .success-content h2 {
     text-align: center;
     font-size: 2rem;
