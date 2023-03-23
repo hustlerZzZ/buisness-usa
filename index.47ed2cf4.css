@@ -1729,12 +1729,12 @@ body {
 .success-container__2 {
     width: 50%;
     margin: 1.65rem;
-    font-size: 1rem;
     background-color: #C9EEFF;
 }
 
 .success-container__2 h2 {
     padding: 1rem;
+    font-size: 2rem;
     text-align: start;
     font-weight: 400;
 }
@@ -1791,6 +1791,10 @@ body {
         margin: 0;
         background-color: #C9EEFF;
     }
+
+    .success-container__2 h2 {
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (max-width:26.56em) {
@@ -1809,6 +1813,10 @@ body {
         margin: 0;
         background-color: #C9EEFF;
     }
+
+    .success-container__2 h2 {
+        font-size: 1rem;
+    }
 }
 
 @media only screen and (max-width:20em) {
@@ -1826,6 +1834,10 @@ body {
         width: 100%;
         margin: 0;
         background-color: #C9EEFF;
+    }
+
+    .success-container__2 h2 {
+        font-size: 1rem;
     }
 }
 
