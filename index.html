@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <script defer src="https://kit.fontawesome.com/9e6b5b84ae.js" crossorigin></script>
     <link rel="stylesheet" href="index.47ed2cf4.css">
-    <script defer type="module" src="index.d9d33ac3.js"></script>
+    <script defer src="index.d9d33ac3.js"></script>
     <link rel="icon shortcut" href="favicon.55258f2e.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin>
@@ -40,9 +40,9 @@
             <h2>Download Free Guidebook</h2>
         </div>
         <div class="header-form">
-            <form class="header-form__items"> <input type="text" class="header-form__items_input"
-                    placeholder="Full Name"> <input type="email" class="header-form__items_input"
-                    placeholder="Email Address"> <input type="text" class="header-form__items_input"
+            <form class="header-form__items" autocomplete="off" name="submit-to-google-sheet"> <input type="text" name="Full Name" class="header-form__items_input"
+                    placeholder="Full Name"> <input type="email" name="Email" class="header-form__items_input"
+                    placeholder="Email Address"> <input type="text" name="Phone Number" class="header-form__items_input"
                     placeholder="Phone Number"> <button type="submit" class="header-form__items_button">Download
                     Now</button> </form>
         </div>
@@ -63,7 +63,7 @@
                         to you. </h5>
                     <h5>In the Guidebook, our expert will unveil the proven roadmap to success and provide you with a
                         comprehensive overview of the necessary steps required for its successful execution. </h5>
-                    <button>Download Free Guidebook</button>
+                    <button class="guidance-compartment__1-btn">Download Free Guidebook</button>
                 </div>
                 <div class="guidance-compartment__2">
                     <h1>What Will Be Your Key Takeaways From The Guidebook:</h1>
@@ -134,7 +134,7 @@
                     pursue business management courses in USA like MBA in hospital management, MBA in healthcare
                     management and other business management courses after 12th in USA. We take pride in providing
                     exceptional service to our students; for instance, guiding students to pursue an MBA without GMAT in
-                    USA.</p> <button>Download Free Guidebook</button>
+                    USA.</p> <button class="features-content__btn">Download Free Guidebook</button>
             </div>
         </div>
     </section>
@@ -209,17 +209,17 @@
         </div>
     </section>
     <section>
-        <div class="form">
+        <div class="form" id="form__section">
             <div class="form-heading">
                 <h1>Unlock The Gateway To Global art & Design Education: Get the Step-by-Step Guidebook Now!</h1>
                 <h3>Seek guidance from the experts who are transforming the lives of numerous students each day.</h3>
-                <form class="form-heading__form"> <input type="text" placeholder="Full Name" required> <input
-                        type="text" placeholder="Phone Number" required> <input type="email" placeholder="Email Address"
+                <form class="form-heading__form" autocomplete="off" name="form_2"> <input type="text" name="Full Name" placeholder="Full Name" required> <input
+                        type="text" name="Phone Number" placeholder="Phone Number" required> <input type="email" name="Email" placeholder="Email Address"
                         required> <select name="Degree" id="Degree" required>
                         <option value="Choose">--Please choose your Degree--</option>
                         <option value="Post-Graduate">Post-Graduate</option>
                         <option value="Under-Graduate">Under-Graduate</option>
-                    </select> <input type="text" placeholder="Current Location" required> <button>Download Free
+                    </select> <input type="text" name="Location" placeholder="Current Location" required> <button class="form-heading__form-btn">Download Free
                         Guidebook</button> </form>
             </div>
         </div>
@@ -400,6 +400,34 @@
             </div>
         </div>
     </section>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwrfCuijFm-gktBTY40IUzUZ4cLOxgVxgJHg4NT94KXnrz3RYFK4gWK8GSNd54ltDmH/exec';
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    window.open("BM-US.pdf");
+                    alert("Form Successfully submited!!")
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+
+        const scriptURL_2 = 'https://script.google.com/macros/s/AKfycbwoHHrnglrCVXHdSTQRRyOKDZKYnqEyR17BsWdDbHjMmvuzsiv9rf6PS6FpLQoys0H1lA/exec';
+        const form_2 = document.forms['form_2']
+
+        form_2.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL_2, { method: 'POST', body: new FormData(form_2) })
+                .then(response => {
+                    window.open("BM-US.pdf");
+                    alert("Form Successfully submited!!")
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 
 </html>
