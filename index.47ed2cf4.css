@@ -137,7 +137,9 @@ body {
 }
 
 .header {
-    background-image: linear-gradient(to bottom right, #1c5f0e99, #00f9), url(background-us.jpg)
+    background-image: linear-gradient(to bottom right, #1c5f0e99, #00f9), url(background-us.jpg);
+        background-size: contain;
+    background-repeat: round;
 }
 
 @media only screen and (max-width:121em) {
